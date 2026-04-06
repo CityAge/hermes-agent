@@ -1,8 +1,1 @@
-[build]
-    builder = "DOCKERFILE"
-    dockerfilePath = "Dockerfile"
-
-[deploy]
-    startCommand = "echo 'DEBUG START' && ls -la /opt/hermes/docker/ && cat /opt/hermes/docker/entrypoint.sh && echo '---ENV CHECK---' && env | grep -i telegram && echo '---TRYING ENTRYPOINT---' && bash -x /opt/hermes/docker/entrypoint.sh gateway 2>&1"
-    restartPolicyType = "ON_FAILURE"
-    restartPolicyMaxRetries = 10
+startCommand = "mkdir -p /opt/data && echo \"OPENROUTER_API_KEY=$OPENROUTER_API_KEY\" >> /opt/data/.env && echo \"TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN\" >> /opt/data/.env && echo \"TELEGRAM_ALLOWED_USERS=$TELEGRAM_ALLOWED_USERS\" >> /opt/data/.env && hermes gateway"
