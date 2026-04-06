@@ -3,6 +3,6 @@
     dockerfilePath = "Dockerfile"
 
 [deploy]
-    startCommand = "echo \"OPENROUTER_API_KEY=$OPENROUTER_API_KEY\" > /opt/data/.env && echo \"TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN\" >> /opt/data/.env && echo \"TELEGRAM_ALLOWED_USERS=$TELEGRAM_ALLOWED_USERS\" >> /opt/data/.env && /opt/hermes/docker/entrypoint.sh gateway"
+    startCommand = "/opt/hermes/docker/entrypoint.sh gateway"
     restartPolicyType = "ON_FAILURE"
     restartPolicyMaxRetries = 10
