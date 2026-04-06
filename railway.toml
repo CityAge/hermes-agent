@@ -3,6 +3,6 @@
     dockerfilePath = "Dockerfile"
 
 [deploy]
-    startCommand = "rm -f /opt/data/.env && /opt/hermes/docker/entrypoint.sh gateway"
+    startCommand = "sed -i 's|^OPENROUTER_API_KEY=.*|OPENROUTER_API_KEY=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|' /opt/data/.env; /opt/hermes/docker/entrypoint.sh gateway"
     restartPolicyType = "ON_FAILURE"
     restartPolicyMaxRetries = 10
