@@ -1,1 +1,1 @@
-startCommand = "mkdir -p /opt/data && echo \"OPENROUTER_API_KEY=$OPENROUTER_API_KEY\" >> /opt/data/.env && echo \"TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN\" >> /opt/data/.env && echo \"TELEGRAM_ALLOWED_USERS=$TELEGRAM_ALLOWED_USERS\" >> /opt/data/.env && hermes gateway"
+startCommand = "mkdir -p /opt/data && echo \"OPENROUTER_API_KEY=$OPENROUTER_API_KEY\" >> /opt/data/.env && echo \"TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN\" >> /opt/data/.env && echo \"TELEGRAM_ALLOWED_USERS=$TELEGRAM_ALLOWED_USERS\" >> /opt/data/.env && hermes --help 2>&1"
